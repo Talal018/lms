@@ -72,7 +72,7 @@ renderNav(true, $user['name']);
                     'bg-amber-100 text-amber-700', 'bg-rose-100 text-rose-700', 'bg-indigo-100 text-indigo-700'];
         $accent = $accents[($course['id'] - 1) % count($accents)];
       ?>
-      <a href="/lms/course.php?id=<?= $course['id'] ?>"
+      <a href="/course.php?id=<?= $course['id'] ?>"
         class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 card-hover flex flex-col group">
 
         <div class="mb-4">

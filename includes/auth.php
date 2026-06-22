@@ -5,14 +5,14 @@ function isLoggedIn() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /lms/login.php');
+        header('Location: /login.php');
         exit;
     }
 }
 
 function redirectIfLoggedIn() {
     if (isLoggedIn()) {
-        header('Location: /lms/dashboard.php');
+        header('Location: /dashboard.php');
         exit;
     }
 }

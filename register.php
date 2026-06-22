@@ -61,7 +61,7 @@ renderNav(false);
     <?php if ($success): ?>
       <div class="mb-5 bg-green-50 border border-green-200 rounded-lg p-4 text-sm text-green-700">
         <?= htmlspecialchars($success) ?>
-        <a href="/lms/login.php" class="font-semibold underline ml-1">Login now →</a>
+        <a href="/login.php" class="font-semibold underline ml-1">Login now →</a>
       </div>
     <?php endif; ?>
 
@@ -106,7 +106,7 @@ renderNav(false);
 
     <p class="mt-6 text-center text-sm text-gray-500">
       Already have an account?
-      <a href="/lms/login.php" class="text-brand font-medium hover:underline">Log in</a>
+      <a href="/login.php" class="text-brand font-medium hover:underline">Log in</a>
     </p>
   </div>
 </main>

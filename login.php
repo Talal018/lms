@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id']    = $user['id'];
             $_SESSION['user_name']  = $user['name'];
             $_SESSION['user_email'] = $user['email'];
-            header('Location: /lms/dashboard.php');
+            header('Location: /dashboard.php');
             exit;
         } else {
             $error = 'Invalid email or password.';
@@ -80,7 +80,7 @@ renderNav(false);
 
     <p class="mt-6 text-center text-sm text-gray-500">
       Don't have an account?
-      <a href="/lms/register.php" class="text-brand font-medium hover:underline">Register free</a>
+      <a href="/register.php" class="text-brand font-medium hover:underline">Register free</a>
     </p>
   </div>
 </main>

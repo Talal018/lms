@@ -15,7 +15,7 @@ $stmt->execute([$courseId]);
 $course = $stmt->fetch();
 
 if (!$course) {
-    header('Location: /lms/dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 
@@ -32,7 +32,7 @@ renderNav(true, $user['name']);
 
   <!-- Breadcrumb -->
   <nav class="mb-6 text-sm text-gray-400 flex items-center gap-2">
-    <a href="/lms/dashboard.php" class="hover:text-brand transition">Dashboard</a>
+    <a href="/dashboard.php" class="hover:text-brand transition">Dashboard</a>
     <span>›</span>
     <span class="text-gray-700 font-medium"><?= htmlspecialchars($course['title']) ?></span>
   </nav>
@@ -68,7 +68,7 @@ renderNav(true, $user['name']);
   <?php else: ?>
     <div class="space-y-3">
       <?php foreach ($lessons as $i => $lesson): ?>
-      <a href="/lms/lesson.php?id=<?= $lesson['id'] ?>"
+      <a href="/lesson.php?id=<?= $lesson['id'] ?>"
         class="flex items-center gap-4 bg-white border border-gray-100 rounded-xl px-6 py-4 shadow-sm card-hover group">
 
         <!-- Number badge -->
@@ -94,7 +94,7 @@ renderNav(true, $user['name']);
   <?php endif; ?>
 
   <div class="mt-8">
-    <a href="/lms/dashboard.php" class="text-sm text-brand hover:underline flex items-center gap-1">
+    <a href="/dashboard.php" class="text-sm text-brand hover:underline flex items-center gap-1">
       ← Back to Dashboard
     </a>
   </div>

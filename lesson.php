@@ -20,7 +20,7 @@ $stmt->execute([$lessonId]);
 $lesson = $stmt->fetch();
 
 if (!$lesson) {
-    header('Location: /lms/dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 
@@ -45,9 +45,9 @@ renderNav(true, $user['name']);
 
   <!-- Breadcrumb -->
   <nav class="mb-6 text-sm text-gray-400 flex items-center gap-2 flex-wrap">
-    <a href="/lms/dashboard.php" class="hover:text-brand transition">Dashboard</a>
+    <a href="/dashboard.php" class="hover:text-brand transition">Dashboard</a>
     <span>›</span>
-    <a href="/lms/course.php?id=<?= $lesson['course_id'] ?>" class="hover:text-brand transition">
+    <a href="/course.php?id=<?= $lesson['course_id'] ?>" class="hover:text-brand transition">
       <?= htmlspecialchars($lesson['course_title']) ?>
     </a>
     <span>›</span>
@@ -65,7 +65,7 @@ renderNav(true, $user['name']);
         <ul class="space-y-1">
           <?php foreach ($allLessons as $i => $l): ?>
             <li>
-              <a href="/lms/lesson.php?id=<?= $l['id'] ?>"
+              <a href="/lesson.php?id=<?= $l['id'] ?>"
                 class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition
                   <?= $l['id'] == $lessonId
                     ? 'bg-brand text-white font-semibold'
@@ -107,7 +107,7 @@ renderNav(true, $user['name']);
       <div class="flex items-center justify-between gap-4">
         <div class="flex-1">
           <?php if ($prevLesson): ?>
-            <a href="/lms/lesson.php?id=<?= $prevLesson['id'] ?>"
+            <a href="/lesson.php?id=<?= $prevLesson['id'] ?>"
               class="flex items-center gap-3 bg-white border border-gray-100 rounded-xl px-5 py-3 shadow-sm hover:border-brand hover:shadow-md transition group">
               <svg class="w-4 h-4 text-gray-400 group-hover:text-brand transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -124,7 +124,7 @@ renderNav(true, $user['name']);
 
         <div class="flex-1 flex justify-end">
           <?php if ($nextLesson): ?>
-            <a href="/lms/lesson.php?id=<?= $nextLesson['id'] ?>"
+            <a href="/lesson.php?id=<?= $nextLesson['id'] ?>"
               class="flex items-center gap-3 bg-white border border-gray-100 rounded-xl px-5 py-3 shadow-sm hover:border-brand hover:shadow-md transition group text-right">
               <div>
                 <p class="text-xs text-gray-400">Next</p>
@@ -137,7 +137,7 @@ renderNav(true, $user['name']);
               </svg>
             </a>
           <?php elseif (!$nextLesson && !$prevLesson === false): ?>
-            <a href="/lms/course.php?id=<?= $lesson['course_id'] ?>"
+            <a href="/course.php?id=<?= $lesson['course_id'] ?>"
               class="text-sm text-brand hover:underline flex items-center gap-1">
               Course complete! Back to overview →
             </a>
@@ -146,7 +146,7 @@ renderNav(true, $user['name']);
       </div>
 
       <div class="mt-6">
-        <a href="/lms/course.php?id=<?= $lesson['course_id'] ?>" class="text-sm text-gray-400 hover:text-brand transition flex items-center gap-1">
+        <a href="/course.php?id=<?= $lesson['course_id'] ?>" class="text-sm text-gray-400 hover:text-brand transition flex items-center gap-1">
           ← Back to <?= htmlspecialchars($lesson['course_title']) ?>
         </a>
       </div>
